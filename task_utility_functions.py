@@ -20,7 +20,7 @@ def clear_screen():
 # fileName: the name of the text file that will store the task data
 # tasks: the list of tasks that will be stored in the text file
 ######################################################################
-def save_tasks_to_file(fileName, tasks, numTasksCompleted):
+def save_tasks_to_file(fileName, tasks):
     # clear the file fileName or creates it if it does not exist
     file = open(fileName, "w")
     file.close()
@@ -29,13 +29,12 @@ def save_tasks_to_file(fileName, tasks, numTasksCompleted):
     file = open(fileName, 'a')
 
     # write the number of tasks to the top of the file
-    file.write(str(len(tasks) - numTasksCompleted))
+    file.write(str(len(tasks)))
 
     for task in tasks:
         # writes task to file in the format of title, date, then description
         # each task's data is seperated with a new line
-        if not task.isCompleted():
-            file.write(f"\n{task}")
+        file.write(f"\n{task}")
 
     file.close()
 
@@ -90,12 +89,11 @@ def print_task_list(tasks):
     num = 1
 
     for task in tasks:
-        if not task.isCompleted():
-            print(f"{num}.")
-            task.print()
-            print("\n")
+        print(f"{num}.")
+        task.print()
+        print("\n")
 
-            num += 1
+        num += 1
 
 
 ######################################################################
@@ -179,11 +177,9 @@ def complete_task(tasks):
         else:
             valid_input = True
 
-    # FIXME: Change implomentation to use a linked list
-    if tasks[int(user_input)-1].isCompleted():
-            print("This task is already complete")
-    else:
-        tasks[int(user_input)-1].markComplete()
+
+    tasks.pop(int(user_input)-1)
+
 
 ######################################################################
 # can_convert_to_int():
