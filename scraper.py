@@ -175,5 +175,5 @@ for day in days:
 
 driver.quit()
 
-save_tasks_to_file("task_data.txt", tasks, 0)
+save_tasks_to_file("task_data.txt", tasks)
 
