@@ -24,7 +24,6 @@ def print_user_action_list():
 
 # VARIABLES #
 tasks = [] 
-numTasksCompleted = 0
 user_input = ""
 valid_input = False
 
@@ -54,10 +53,9 @@ while user_input != "quit":
         TUF.clear_screen()
         if len(tasks) > 0:
             TUF.complete_task(tasks)
-            numTasksCompleted += 1
 
         else:
             print("There are no tasks to complete\n")
             input("Press ENTER To Continue")
 
-TUF.save_tasks_to_file(FILE_NAME, tasks, numTasksCompleted)
+TUF.save_tasks_to_file(FILE_NAME, tasks)
