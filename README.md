@@ -6,8 +6,4 @@ scraper.py is the executable that gathers all relevent task data. scraper.py req
 
 This project uses selenium and google chrome to access and interact with the web. 
 
-While this project is in a working state, there are two small bugs in the system:
-First, some assignment titles are unable to be captured by the selenium prompts used.
-Second, the complete function in the task manager is handled by booleans leading to the user being unable to accurately predict the outcome of completeing certain tasks.
-
-The second issue will eventually be fixed with the implomentation of a linked list.
+While this project is in a working state, there is one small bug in the system. Ssome assignment titles are unable to be captured by the selenium prompts used.
