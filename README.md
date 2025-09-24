@@ -1,5 +1,8 @@
 # University-Web-Scraper
-An example program made using python. The application acts as a rudimentary task manager built to handle assignment details retrieved from scrubbing my universities website.
+An example program made using python. 
+
+manager.py is the executable that acts as a rudamentary task manager to handle the data collected by this project's web scraping.
+scraper.py is the executable that gathers all relevent task data. scraper.py requires the user to input their username, password, and navigate their duo security. Everything else is automated by selenium.
 
 This project uses selenium and google chrome to access and interact with the web. 
 
