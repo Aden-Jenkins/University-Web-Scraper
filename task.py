@@ -16,9 +16,7 @@ class Task:
         
         self.setTitle(title)        
         self.setDuedate(duedate.day, duedate.month, duedate.year)
-        self.setDescription(description)
-        self.completed = False
-    
+        self.setDescription(description)    
 
     # The string representation for this class
     def __str__(self):
@@ -30,12 +28,9 @@ class Task:
 # console.
 ######################################################################
     def print(self):
-        if self.completed:
-            print("COMPLETE")
-        else: 
-            print(f"TO DO: {self.title}")
-            print(f"DUE: {self.date}")
-            print(f"DESCRIPTION: {self.description}")
+        print(f"TO DO: {self.title}")
+        print(f"DUE: {self.date}")
+        print(f"DESCRIPTION: {self.description}")
 
 ######################################################################
 # setTitle():
@@ -100,17 +95,4 @@ class Task:
             self.date = datetime.date(year, month, day)
             return True
 
-# FIXME: These should be removed once linked list is implomented
-######################################################################
-# markComplete():
-# sets the complete variable to true
-######################################################################
-    def markComplete(self):
-        self.completed = True
 
-######################################################################
-# isCompleted():
-# gets the value of completed of this task instance
-######################################################################
-    def isCompleted(self):
-        return self.completed
